@@ -1,0 +1,16 @@
+.addButton{
+    width: 80%;
+    max-width: 500px;
+    background-color: darken($mainColor,10);
+    border: 1px solid rgb(255, 206, 206);
+    padding: 1rem;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.5rem;
+    transition: .1s ease-in-out;
+    margin: .5rem;
+    border-radius: .5rem;
+    &:hover{
+        background-color: $mainColor;
+    }
+}

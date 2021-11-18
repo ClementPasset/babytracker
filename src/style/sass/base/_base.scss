@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+*::selection{
+    background-color: darken($mainColor,10);
+    color: #fff;
+}
+main{
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2rem;
+}
+input:-webkit-autofill{
+    box-shadow: 0 0 0 30px white inset;
+}
+p{
+    text-align: center;
+    white-space: pre-line;
+}
+li{
+    list-style-type: none;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}

@@ -1,0 +1,74 @@
+.popup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: lightcoral;
+    color: #fff;
+    padding: 1.5rem;
+    transform: translate(-50%,-50%);
+    z-index: 999;
+    width: 80%;
+    max-width: 500px;
+    border: 2px solid #fff;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &--yes{
+            background-color: #b7e7c5;
+            &:hover{
+                background-color: darken(#b7e7c5,10);
+            }
+        }
+        &--no{
+            background-color: #e7b7b7;
+            &:hover{
+                background-color: darken(#e7b7b7,10);
+            }
+        }
+
+        & button{
+            margin: 2rem 1rem 1rem 1rem;
+            padding: 1rem;
+            width: 40%;
+            cursor: pointer;
+            border: 1px solid white;
+            border-radius: .5rem;
+        }
+    }
+
+    input{
+        width: 50%;
+        margin: 1rem;
+        padding: .5rem;
+        text-align: center;
+    }
+
+    &__images{
+        background-color: lighten($mainColor, 10);
+        border-radius: .5rem;
+        margin: .5rem 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            height: 50px;
+            width: auto;
+            margin: .5rem;
+            filter: grayscale(.5);
+            cursor: pointer;
+
+            &.active{
+                filter: grayscale(0);
+            }
+        }
+    }
+}

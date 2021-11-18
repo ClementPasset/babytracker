@@ -1,0 +1,15 @@
+.recapTable{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: $mainColor;
+    margin-bottom: .5rem;
+    span{
+        margin-left: .5rem;
+    }
+    img{
+        margin-right: .5rem;
+        display: flex;
+    }
+}

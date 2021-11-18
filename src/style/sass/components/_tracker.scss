@@ -1,0 +1,74 @@
+.tracker{
+
+    &__table{
+        border: 1px solid $mainColor;
+        width: 80%;
+        max-width: 1000px;
+        margin: 1rem auto;
+        border-collapse: collapse;
+        
+        th, td{
+            border: 1px solid $mainColor;
+            text-align: center;
+            width: auto;
+            height: 2rem;
+        }
+
+        td{
+            padding: 1rem;
+        }
+
+        td:first-child, th:first-child{
+            width: 25%;
+        }
+
+        th{
+            background-color: $mainColor;
+            color:#fff;
+            font-size: 1.2rem;
+        }
+
+        img{
+            width: auto;
+            height: 50px;
+            margin: 0 1.5rem;
+            cursor: pointer;
+            filter: grayscale(1);
+            opacity: .7;
+            transition: filter .3s ease-in;
+            user-select: none;
+
+            &.active{
+                filter: grayscale(0);
+                opacity: 1; 
+            }
+            
+            &:hover{
+                filter: grayscale(.2);
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+@media (max-width: 650px){
+    .tracker{
+        &__table{
+
+            width:90%;
+
+            td:first-child, th:first-child{
+                width: 15%;
+            }
+
+            td{
+                padding: .5rem;
+            }
+
+            img{
+                margin: 0.2rem;
+                height: 40px;
+            }
+        }
+    }
+}

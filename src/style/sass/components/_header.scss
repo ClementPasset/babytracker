@@ -1,0 +1,18 @@
+.header{
+    background-color: $mainColor;
+    color: #fff;
+    width: 100%;
+    min-height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top :0;
+    z-index: 999;
+    box-shadow: 1px 1px 4px black;
+
+    &__title{
+        text-align: center;
+        letter-spacing: .2em;
+    }
+}
