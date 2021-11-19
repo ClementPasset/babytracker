@@ -1,0 +1,16 @@
+.triangle{
+    width: 10px;
+    height:10px;
+    border-top: .5rem solid $mainColor;
+    border-left: .5rem solid $mainColor;
+    border-bottom: .5rem solid transparent;
+    border-right: .5rem solid transparent;
+    cursor: pointer;
+
+    &--left{
+        transform: rotate(-45deg);
+    }
+    &--right{
+        transform: rotate(135deg);
+    }
+}

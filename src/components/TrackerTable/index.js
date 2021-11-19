@@ -5,12 +5,14 @@ import TrackerRow from "../TrackerRow";
 import DeletePopup from "../DeletePopup";
 import AddPopup from "../AddPopup";
 import RecapTable from "../RecapTable";
+import DatePicker from "../DatePicker";
 
 const TrackerTable = () => {
 
     const [datas, setDatas] = useState(null);
     const [deletePopup, setDeletePopup] = useState(null);
     const [addPopup, setAddPopup] = useState(false);
+    const [date, setDate] = useState(new Date());
 
     useEffect(() => {
 
@@ -18,7 +20,7 @@ const TrackerTable = () => {
             .then(res => res.json())
             .then(res => {
                 res.reports = res.reports.filter(elt => {
-                    if ((new Date(elt.date)).getDate() >= ((new Date()).getDate() - 1)) {
+                    if ((new Date(elt.date)).toLocaleDateString() === date.toLocaleDateString()) {
                         return true;
                     } else {
                         return false;
@@ -27,7 +29,7 @@ const TrackerTable = () => {
                 setDatas(res.reports);
             })
             .catch(error => console.log('Error : ', error))
-    }, []);
+    }, [date]);
 
     const handleNo = () => {
         setDeletePopup(null);
@@ -53,7 +55,8 @@ const TrackerTable = () => {
         <>
             {datas && <>
                 <button className="addButton" onClick={() => { setAddPopup(true) }}>Ajouter une ligne</button>
-                <RecapTable datas={datas} />
+                <DatePicker date={date} setDate={setDate} />
+                <RecapTable datas={datas} date={date} />
                 <table className="tracker__table">
                     <thead>
                         <tr>

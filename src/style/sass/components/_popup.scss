@@ -15,6 +15,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 
     &__button{
         display: flex;
@@ -69,6 +70,13 @@
             &.active{
                 filter: grayscale(0);
             }
+        }
+    }
+}
+@media (max-width: 650px){
+    .popup{
+        input{
+            width: 80%;
         }
     }
 }
