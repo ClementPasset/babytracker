@@ -10,6 +10,7 @@ import DatePicker from "../DatePicker";
 const TrackerTable = () => {
 
     const [datas, setDatas] = useState(null);
+    const [displayDatas, setDisplayDatas] = useState(null);
     const [deletePopup, setDeletePopup] = useState(null);
     const [addPopup, setAddPopup] = useState(false);
     const [date, setDate] = useState(new Date());
@@ -19,16 +20,23 @@ const TrackerTable = () => {
         fetch(process.env.REACT_APP_API_URL)
             .then(res => res.json())
             .then(res => {
-                res.reports = res.reports.filter(elt => {
-                    if ((new Date(elt.date)).toLocaleDateString() === date.toLocaleDateString()) {
-                        return true;
-                    } else {
-                        return false;
-                    }
-                })
                 setDatas(res.reports);
+                res.reports = res.reports.filter(elt => {
+                    return (new Date(elt.date)).toLocaleDateString() === date.toLocaleDateString()
+                })
+                setDisplayDatas(res.reports);
             })
             .catch(error => console.log('Error : ', error))
+    }, []);
+
+    useEffect(() => {
+        if (datas) {
+
+            let newDisplayDatas = datas.filter(elt => {
+                return (new Date(elt.date)).toLocaleDateString() === date.toLocaleDateString()
+            });
+            setDisplayDatas(newDisplayDatas);
+        }
     }, [date]);
 
     const handleNo = () => {
@@ -41,10 +49,10 @@ const TrackerTable = () => {
                 method: 'DELETE'
             })
             .then(() => {
-                let newDatas = datas.filter(elt => {
+                let newDatas = displayDatas.filter(elt => {
                     return elt._id !== deletePopup.id;
                 })
-                setDatas(newDatas);
+                setDisplayDatas(newDatas);
                 handleNo();
             })
             .catch(error => console.log(error))
@@ -53,10 +61,10 @@ const TrackerTable = () => {
 
     return (
         <>
-            {datas && <>
+            {displayDatas && <>
                 <button className="addButton" onClick={() => { setAddPopup(true) }}>Ajouter une ligne</button>
                 <DatePicker date={date} setDate={setDate} />
-                <RecapTable datas={datas} date={date} />
+                <RecapTable displayDatas={displayDatas} date={date} />
                 <table className="tracker__table">
                     <thead>
                         <tr>
@@ -66,7 +74,7 @@ const TrackerTable = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {datas && datas.map((data, index) => {
+                        {displayDatas && displayDatas.map((data, index) => {
                             return (
                                 <TrackerRow key={`reportsListing-${index}`} data={data} setDeletePopup={setDeletePopup} />
                             )
@@ -74,9 +82,9 @@ const TrackerTable = () => {
                     </tbody>
                 </table>
                 {deletePopup && <DeletePopup handleNo={handleNo} handleYes={handleYes} />}
-                {addPopup && <AddPopup setAddPopup={setAddPopup} datas={datas} setDatas={setDatas} />}
+                {addPopup && <AddPopup setAddPopup={setAddPopup} displayDatas={displayDatas} setDisplayDatas={setDisplayDatas} />}
             </>}
-            {!datas && <div className="loader"></div>}
+            {!displayDatas && <div className="loader"></div>}
         </>
     );
 };

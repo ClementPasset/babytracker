@@ -3,13 +3,13 @@ import poop from '../../assets/poop.png';
 import feddingBottle from '../../assets/baby-bottle.png';
 import { useEffect, useState } from 'react';
 
-const RecapTable = ({ datas, date }) => {
+const RecapTable = ({ displayDatas, date }) => {
 
     const [count, setCount] = useState({ urine: 0, stools: 0, feeding: 0 });
 
     useEffect(() => {
         let newCount = { urine: 0, stools: 0, feeding: 0 };
-        datas.forEach(data => {
+        displayDatas.forEach(data => {
             if (data.date.toLocaleDateString() === date.toLocaleDateString()) {
                 newCount.urine += data.urine === true ? 1 : 0;
                 newCount.stools += data.stools === true ? 1 : 0;
@@ -17,7 +17,7 @@ const RecapTable = ({ datas, date }) => {
             }
         })
         setCount(newCount);
-    }, [datas]);
+    }, [displayDatas]);
 
     return (
         <>
