@@ -21,7 +21,7 @@ function getTime() {
     }
     return String('000' + hours).slice(-2) + ':' + String('000' + minutes).slice(-2);
 }
-const AddPopup = ({ setAddPopup, datas, setDatas }) => {
+const AddPopup = ({ setAddPopup, displayDatas, setDisplayDatas }) => {
 
     const [newReport, setNewReport] = useState({
         date: getDate(),
@@ -62,8 +62,8 @@ const AddPopup = ({ setAddPopup, datas, setDatas }) => {
         })
             .then(res => res.json())
             .then((resp) => {
-                let data = [resp.report, ...datas];
-                setDatas(data);
+                let data = [resp.report, ...displayDatas];
+                setDisplayDatas(data);
             })
             .catch(error => console.log(error));
         setAddPopup(null);
