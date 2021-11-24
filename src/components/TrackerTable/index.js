@@ -76,7 +76,7 @@ const TrackerTable = () => {
                     <tbody>
                         {displayDatas && displayDatas.map((data, index) => {
                             return (
-                                <TrackerRow key={`reportsListing-${index}`} data={data} setDeletePopup={setDeletePopup} />
+                                <TrackerRow key={`reportsListing-${index}`} data={data} setDeletePopup={setDeletePopup} displayDatas={displayDatas} setDisplayDatas={setDisplayDatas} />
                             )
                         })}
                     </tbody>
