@@ -95,7 +95,7 @@ const TrackerTable = () => {
                 {deletePopup && <DeletePopup handleNo={handleNo} handleYes={handleYes} />}
                 {addPopup && <AddPopup isLogged={isLogged} setAddPopup={setAddPopup} displayDatas={displayDatas} setDisplayDatas={setDisplayDatas} />}
             </>}
-            {/*(!displayDatas && isLogged) && <div className="loader"></div>*/}
+            {(!datas && isLogged) && <div className="loader"></div>}
         </>
     );
 };
