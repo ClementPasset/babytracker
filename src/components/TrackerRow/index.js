@@ -4,7 +4,7 @@ import feddingBottle from '../../assets/baby-bottle.png';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const TrackerRow = ({ data, setDeletePopup, displayDatas, setDisplayDatas }) => {
+const TrackerRow = ({ isLogged, data, setDeletePopup, displayDatas, setDisplayDatas }) => {
 
     data.date = new Date(data.date)
     let date = data.date.toLocaleDateString();
@@ -18,12 +18,13 @@ const TrackerRow = ({ data, setDeletePopup, displayDatas, setDisplayDatas }) => 
             return elt._id !== data._id;
         })
         newDisplayDatas = [newData, ...newDisplayDatas];
-        fetch(process.env.REACT_APP_API_URL + newData._id,
+        fetch(process.env.REACT_APP_API_URL + 'reports/' + newData._id,
             {
                 method: 'PUT',
                 headers: {
                     'Accept': 'application/json',
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    "Authorization": `Bearer ${isLogged.token}`
                 },
                 body: JSON.stringify({ report: newData })
             })

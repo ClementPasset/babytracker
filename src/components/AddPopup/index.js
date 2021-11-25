@@ -21,7 +21,7 @@ function getTime() {
     }
     return String('000' + hours).slice(-2) + ':' + String('000' + minutes).slice(-2);
 }
-const AddPopup = ({ setAddPopup, displayDatas, setDisplayDatas }) => {
+const AddPopup = ({ setAddPopup, displayDatas, setDisplayDatas, isLogged }) => {
 
     const [newReport, setNewReport] = useState({
         date: getDate(),
@@ -52,11 +52,12 @@ const AddPopup = ({ setAddPopup, displayDatas, setDisplayDatas }) => {
         let report = { ...newReport };
         report.date = new Date(report.date + ', ' + report.time);
         delete report.time;
-        fetch(process.env.REACT_APP_API_URL, {
+        fetch(process.env.REACT_APP_API_URL + 'reports/', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                "Authorization": `Bearer ${isLogged.token}`
             },
             body: JSON.stringify(report)
         })

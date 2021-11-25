@@ -1,0 +1,39 @@
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    background-color:$mainColor;
+    padding: 1.5rem;
+    box-shadow: 2px 2px 2px darken($mainColor,10), -2px -2px 2px lighten($mainColor,10);
+    margin-top: 2rem;
+    width: 80%;
+
+    & *{
+        margin: .5rem auto;
+    }
+
+    & label{
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    & input{
+        padding: .3rem;
+        outline: none;
+        
+        &:focus{
+            border: 2px solid red;
+        }
+    }
+
+    & button {
+        padding: .5rem 1rem;
+        outline: none;
+        cursor: pointer;
+
+        &:focus{
+            border: 2px solid red;
+        }
+    }
+}
