@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/babytracker/static/css/main.e9af22d1.chunk.css",
-    "main.js": "/babytracker/static/js/main.5fec25e6.chunk.js",
-    "main.js.map": "/babytracker/static/js/main.5fec25e6.chunk.js.map",
+    "main.css": "/babytracker/static/css/main.7a326b65.chunk.css",
+    "main.js": "/babytracker/static/js/main.36bd845f.chunk.js",
+    "main.js.map": "/babytracker/static/js/main.36bd845f.chunk.js.map",
     "runtime-main.js": "/babytracker/static/js/runtime-main.728e494d.js",
     "runtime-main.js.map": "/babytracker/static/js/runtime-main.728e494d.js.map",
     "static/js/2.35cae089.chunk.js": "/babytracker/static/js/2.35cae089.chunk.js",
     "static/js/2.35cae089.chunk.js.map": "/babytracker/static/js/2.35cae089.chunk.js.map",
     "index.html": "/babytracker/index.html",
-    "static/css/main.e9af22d1.chunk.css.map": "/babytracker/static/css/main.e9af22d1.chunk.css.map",
+    "static/css/main.7a326b65.chunk.css.map": "/babytracker/static/css/main.7a326b65.chunk.css.map",
     "static/js/2.35cae089.chunk.js.LICENSE.txt": "/babytracker/static/js/2.35cae089.chunk.js.LICENSE.txt",
     "static/media/pee-drop.4b4cef13.png": "/babytracker/static/media/pee-drop.4b4cef13.png"
   },
   "entrypoints": [
     "static/js/runtime-main.728e494d.js",
     "static/js/2.35cae089.chunk.js",
-    "static/css/main.e9af22d1.chunk.css",
-    "static/js/main.5fec25e6.chunk.js"
+    "static/css/main.7a326b65.chunk.css",
+    "static/js/main.36bd845f.chunk.js"
   ]
 }
