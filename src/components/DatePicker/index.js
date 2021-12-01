@@ -1,13 +1,13 @@
 const DatePicker = ({ date, setDate }) => {
 
     const handlePreviousDate = () => {
-        let newDate = new Date();
+        let newDate = new Date(date);
         newDate.setDate(date.getDate() - 1);
         setDate(newDate);
     };
 
     const handleNextDate = () => {
-        let newDate = new Date();
+        let newDate = new Date(date);
         newDate.setDate(date.getDate() + 1);
         setDate(newDate);
     };
@@ -15,6 +15,7 @@ const DatePicker = ({ date, setDate }) => {
     const resetDate = () => {
         setDate(new Date());
     }
+
 
     return (
         <div className="datePicker">
