@@ -28,7 +28,8 @@ const AddPopup = ({ setAddPopup, displayDatas, setDisplayDatas, isLogged }) => {
         time: getTime() === '24:00' ? '00:00' : getTime(),
         urine: false,
         stools: false,
-        feeding: false
+        feeding: false,
+        userId: JSON.parse(localStorage.getItem("isLogged")).userId ?? null
     });
 
     const handleClick = (e) => {

@@ -20,7 +20,7 @@ const TrackerTable = () => {
     useEffect(() => {
 
         if (isLogged) {
-            fetch(process.env.REACT_APP_API_URL + 'reports/', {
+            fetch(process.env.REACT_APP_API_URL + 'reports/' + isLogged.userId, {
                 headers: {
                     "Authorization": `Bearer ${isLogged.token}`
                 }
