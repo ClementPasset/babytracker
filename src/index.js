@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 let routes = [
   {
-    path: '/',
+    path: '/babytracker',
     exact: true,
     component: <Home />
   },
