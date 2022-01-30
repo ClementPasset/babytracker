@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/babytracker/static/css/main.685d09e5.chunk.css",
-    "main.js": "/babytracker/static/js/main.7f08aa13.chunk.js",
-    "main.js.map": "/babytracker/static/js/main.7f08aa13.chunk.js.map",
+    "main.js": "/babytracker/static/js/main.365daf81.chunk.js",
+    "main.js.map": "/babytracker/static/js/main.365daf81.chunk.js.map",
     "runtime-main.js": "/babytracker/static/js/runtime-main.728e494d.js",
     "runtime-main.js.map": "/babytracker/static/js/runtime-main.728e494d.js.map",
     "static/js/2.b8959b71.chunk.js": "/babytracker/static/js/2.b8959b71.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.728e494d.js",
     "static/js/2.b8959b71.chunk.js",
     "static/css/main.685d09e5.chunk.css",
-    "static/js/main.7f08aa13.chunk.js"
+    "static/js/main.365daf81.chunk.js"
   ]
 }
